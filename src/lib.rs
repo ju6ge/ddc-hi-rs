@@ -356,12 +356,16 @@ pub enum Backend {
 
 impl fmt::Display for Backend {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", match *self {
-            Backend::I2cDevice => "i2c-dev",
-            Backend::WinApi => "winapi",
-            Backend::Nvapi => "nvapi",
-            Backend::MacOS => "macos",
-        })
+        write!(
+            f,
+            "{}",
+            match *self {
+                Backend::I2cDevice => "i2c-dev",
+                Backend::WinApi => "winapi",
+                Backend::Nvapi => "nvapi",
+                Backend::MacOS => "macos",
+            }
+        )
     }
 }
 
